@@ -14,7 +14,7 @@ export default function AccountNavigation() {
             <Link to="/Kanbas/Inbox" id="wd-inbox-link">Inbox</Link><br/>
             <Link to={`/Kanbas/Account/Signup`}> Signup </Link> <br/>
             <Link to={`/Kanbas/Account/Profile`}> Profile </Link> <br/>
-            <Link to="/Labs" id="wd-labs-link">Labs</Link><br/>
+            <Link to="/Labs" id="wd-labs-link">Back to Labs</Link><br/>
         </div>
     );
 }
