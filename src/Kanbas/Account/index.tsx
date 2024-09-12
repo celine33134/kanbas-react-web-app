@@ -12,12 +12,12 @@ export default function Account() {
             {/*In the Account screen add a table to layout the
             AccountNavigation component on a column on the left and the routes
             on the right side column as shown below.*/}
-            <table>
-                <tr>
-                    <td valign="top">
-                        <AccountNavigation/>
-                    </td>
-                    <td valign="top">
+            {/*<table>*/}
+            {/*    <tr>*/}
+            {/*        <td valign="top">*/}
+            {/*            <AccountNavigation/>*/}
+            {/*        </td>*/}
+            {/*        <td valign="top">*/}
 
                         {/*<h2>Account</h2>*/}
                         <Routes>
@@ -26,9 +26,9 @@ export default function Account() {
                             <Route path="/Profile" element={<Profile/>}/>
                             <Route path="/Signup" element={<Signup/>}/>
                         </Routes>
-                    </td>
-                </tr>
-            </table>
+            {/*        </td>*/}
+            {/*    </tr>*/}
+            {/*</table>*/}
 
         </div>
 );

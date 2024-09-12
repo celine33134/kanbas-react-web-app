@@ -64,6 +64,10 @@ export default function Lab1() {
                 My favorite recipe:
                 <ol id="wd-your-favorite-recipe">
                     {/* complete on your own */}
+                    <li>1 cup (125 g) all-purpose flour</li>
+                    <li>2 tablespoons sugar</li>
+                    <li>1 cup (240 ml) buttermilk</li>
+                    <li>Keep Warm</li>
                 </ol>
 
                 <h5>Unordered List Tag</h5>
@@ -78,6 +82,9 @@ export default function Lab1() {
                 Your favorite books (in no particular order)
                 <ul id="wd-your-books">
                     {/* complete on your own */}
+                    <li>To Kill a Mockingbird</li>
+                    <li>Educated</li>
+                    <li>Gone with the Wind</li>
                 </ul>
 
             </div>
@@ -131,11 +138,11 @@ export default function Lab1() {
                 <img id="wd-starship"
                      width="400px"
                      src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
-                />
+                     alt=""/>
                 <br/>
                 Loading a local image:
                 <br/>
-                <img id="wd-teslabot" src="images/teslabot.jpeg" height="200px"/>
+                <img id="wd-teslabot" src="images/teslabot.jpeg" height="200px" alt=""/>
             </div>
 
             {/*Form Elements*/}
