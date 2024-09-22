@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import './index.css';
 // Comment out, or delete the index.css import statement so we can see the raw, default style of Web pages
 import App from './App';
