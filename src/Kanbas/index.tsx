@@ -17,7 +17,7 @@ export default function Kanbas() {
                     </td>
                     <td valign="top">
                         <h1>Kanbas</h1>
-                        <h2>Account</h2>
+                        {/*<h2>Account</h2>*/}
 
                         <Routes>
                             <Route path="/" element={<Navigate to="Account"/>}/>

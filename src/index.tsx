@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 // import './index.css';
 // Comment out, or delete the index.css import statement so we can see the raw, default style of Web pages
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
