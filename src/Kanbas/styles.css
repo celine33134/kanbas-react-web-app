@@ -1,0 +1,77 @@
+body   {  margin: 0;  padding: 0;  }
+body * {  font-family: Arial, Helvetica, sans-serif;  }
+
+@media (min-width: 768px) {
+    #wd-kanbas .wd-main-content-offset {
+        padding-left: 140px !important;
+    }
+}
+
+/*Styling the Course Navigation Sidebar*/
+.list-group.wd > .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-left: 3px solid black !important;
+}
+
+/*Styling the Modules Screen*/
+.btn-secondary {
+    --bs-btn-color: #000 !important;
+    --bs-btn-bg: #c7cdd1 !important;
+    --bs-btn-border-color: #c7cdd1 !important;
+    --bs-btn-hover-color: #fff !important;
+}
+.bg-secondary {
+    --bs-secondary-rgb: 199, 205, 209;
+}
+.list-group-item {
+    --bs-list-group-border-color: gray;
+}
+.wd-lesson {
+    border-left: 3px solid green !important;
+}
+
+/*styling the assignment screen*/
+.assignments-container {
+    padding: 20px;
+}
+
+.assignments-header {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 300px;
+}
+
+.button-group button {
+    display: inline-flex;
+    align-items: center;
+}
+
+.border-left-green {
+    border-left: 4px solid green;
+    height: 50px;
+}
+
+.assignment-item {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.assignment-info {
+    flex-grow: 1;
+}
+
+.assignment-info h5 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.assignment-info p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+
