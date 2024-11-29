@@ -4,41 +4,23 @@ import React, { useState } from "react";
 
 
 export default function Dashboard({ courses, course, setCourse, addNewCourse,
-                                      deleteCourse, updateCourse }: {
+                                      deleteCourse, updateCourse ,
+                                      enrolling, setEnrolling, updateEnrollment  }: {
     courses: any[]; course: any; setCourse: (course: any) => void;
     addNewCourse: () => void; deleteCourse: (course: any) => void;
-    updateCourse: () => void; }) {
-    // const [courses, setCourses] = useState(db.courses);
-    // const [course, setCourse] = useState<any>({
-    //     _id: "0", name: "New Course", number: "New Number",
-    //     startDate: "2023-09-10", endDate: "2023-12-15",
-    //     image: "/images/reactjs.jpg", description: "New Description"
-    // });
-    // const addNewCourse = () => {
-    //     const newCourse = { ...course,
-    //         _id: new Date().getTime().toString() };
-    //     setCourses([...courses, { ...course, ...newCourse }]);
-    // };
-    // const deleteCourse = (courseId: string) => {
-    //     setCourses(courses.filter((course) => course._id !== courseId));
-    // };
-    // const updateCourse = () => {
-    //     setCourses(
-    //         courses.map((c) => {
-    //             if (c._id === course._id) {
-    //                 return course;
-    //             } else {
-    //                 return c;
-    //             }
-    //         })
-    //     );
-    // };
-
+    updateCourse: () => void; enrolling: boolean;
+    setEnrolling: (enrolling: boolean) => void;
+    updateEnrollment: (courseId: string, enrolled: boolean) => void}) {
 
 
     return (
         <div id="wd-dashboard">
-            <h1 id="wd-dashboard-title">Dashboard</h1>
+            <h1 id="wd-dashboard-title">
+                Dashboard
+                <button onClick={() => setEnrolling(!enrolling)} className="float-end btn btn-primary">
+                    {enrolling ? "My Courses" : "All Courses"}
+                </button>
+            </h1>
             <hr/>
 
             <h5>New Course
@@ -74,9 +56,22 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
                                     <img src={course.imageUrl} width="100%" height={160} alt=""/>
 
                                     <div className="card-body">
+                                        {/*<h5 className="wd-dashboard-course-title card-title">*/}
+                                        {/*    {course.name}*/}
+                                        {/*</h5>*/}
                                         <h5 className="wd-dashboard-course-title card-title">
+                                            {enrolling && (
+                                                <button onClick={(event) => {
+                                                    event.preventDefault();
+                                                    updateEnrollment(course._id, !course.enrolled);
+                                                }}
+                                                        className={`btn ${course.enrolled ? "btn-danger" : "btn-success"} float-end`}>
+                                                    {course.enrolled ? "Unenroll" : "Enroll"}
+                                                </button>
+                                            )}
                                             {course.name}
                                         </h5>
+
 
                                         <p className="wd-dashboard-course-title card-text overflow-y-hidden"
                                            style={{maxHeight: 100}}>
@@ -106,116 +101,6 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
                         </div>
                     ))}
 
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/5800/Home">*/}
-                    {/*            <img src="/images/algorithm.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS5800 Algorithm*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/4550/Home">*/}
-                    {/*            <img src="/images/webdev.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS4550 12631 Web Development*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/1000/Home">*/}
-                    {/*            <img src="/images/machine%20learning.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS1000 Machine Learning*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/2000/Home">*/}
-                    {/*            <img src="/images/cybersecurity.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS2000 Cybersecurity*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/3000/Home">*/}
-                    {/*            <img src="/images/database.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS3000 Database*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
-                    {/*<div className="wd-dashboard-course col" style={{width: "300px"}}>*/}
-                    {/*    <div className="card h-100">*/}
-                    {/*        <Link className="wd-dashboard-course-link text-decoration-none text-dark"*/}
-                    {/*              to="/Kanbas/Courses/4000/Home">*/}
-                    {/*            <img src="/images/deep%20learning.jpeg" width="100%"/>*/}
-                    {/*            <div className="card-body">*/}
-                    {/*                <h5 className="wd-dashboard-course-title card-title">*/}
-                    {/*                    CS4000 Deep Learning*/}
-                    {/*                </h5>*/}
-                    {/*                <p className="card-text">*/}
-                    {/*                    Full Stack software developer*/}
-                    {/*                </p>*/}
-                    {/*                <button className="btn btn-primary"> Go</button>*/}
-                    {/*            </div>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
 
                 </div>
             </div>

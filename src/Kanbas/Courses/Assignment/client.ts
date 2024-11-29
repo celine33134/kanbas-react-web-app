@@ -1,3 +1,4 @@
+
 import axios from "axios";
 const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 const ASSIGNMENTS_API = `${REMOTE_SERVER}/api/assignments`;
@@ -6,7 +7,7 @@ const COURSES_API = `${REMOTE_SERVER}/api/courses`;
 // Retrieve assignments for a specific course
 export const findAssignmentsForCourse = async (courseId: string) => {
     const response = await axios.get(`${COURSES_API}/${courseId}/assignments`);
-    return response.data;
+    return response.data;  // Ensure the data structure is returned as expected
 };
 
 // Create a new assignment
