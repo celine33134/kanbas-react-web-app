@@ -1,5 +1,6 @@
-// Create an Account screen and import the new Signin screen.
 
+
+// Account/index.tsx
 import Signin from "./Signin";
 import { Routes, Route, Navigate } from "react-router";
 import AccountNavigation from "./Navigation";
@@ -9,32 +10,23 @@ import Users from "./Users";
 
 export default function Account() {
     return (
-        <div id="wd-account-screen">
-            {/*In the Account screen add a table to layout the
-            AccountNavigation component on a column on the left and the routes
-            on the right side column as shown below.*/}
-            {/*<table>*/}
-            {/*    <tr>*/}
-            {/*        <td valign="top">*/}
-            {/*            <AccountNavigation/>*/}
-            {/*        </td>*/}
-            {/*        <td valign="top">*/}
+        <div id="wd-account-screen" style={{ display: "flex", flexDirection: "row" }}>
+            {/* Account navigation column */}
+            <div style={{ flex: "0 0 200px", padding: "20px" }}>
+                <AccountNavigation />
+            </div>
 
-                        {/*<h2>Account</h2>*/}
-                        <Routes>
-                            <Route path="/" element={<Navigate to="/Kanbas/Account/Signin"/>}/>
-                            <Route path="/Signin" element={<Signin/>}/>
-                            <Route path="/Profile" element={<Profile/>}/>
-                            <Route path="/Signup" element={<Signup/>}/>
-                            <Route path="/Users" element={<Users />} />
-                            <Route path="/Users/:uid" element={<Users />} />
-
-                        </Routes>
-            {/*        </td>*/}
-            {/*    </tr>*/}
-            {/*</table>*/}
-
+            {/* Main content column */}
+            <div style={{ flex: 1, padding: "20px" }}>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/Kanbas/Account/Signin" />} />
+                    <Route path="/Signin" element={<Signin />} />
+                    <Route path="/Profile" element={<Profile />} />
+                    <Route path="/Signup" element={<Signup />} />
+                    <Route path="/Users" element={<Users />} />
+                    <Route path="/Users/:uid" element={<Users />} />
+                </Routes>
+            </div>
         </div>
-);
+    );
 }
-

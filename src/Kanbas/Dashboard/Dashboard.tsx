@@ -56,9 +56,6 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
                                     <img src={course.imageUrl} width="100%" height={160} alt=""/>
 
                                     <div className="card-body">
-                                        {/*<h5 className="wd-dashboard-course-title card-title">*/}
-                                        {/*    {course.name}*/}
-                                        {/*</h5>*/}
                                         <h5 className="wd-dashboard-course-title card-title">
                                             {enrolling && (
                                                 <button onClick={(event) => {

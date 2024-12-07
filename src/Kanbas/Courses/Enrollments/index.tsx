@@ -1,9 +1,10 @@
-// src/Kanbas/Courses/Enrollments/index.tsx
+
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as enrollmentsClient from "../Enrollments/client";
-import {enroll, setEnrollments, unenroll} from "./reducer";
+import { enroll, setEnrollments, unenroll } from "./reducer";
 
 export default function Enrollments() {
     const { cid } = useParams();
@@ -23,7 +24,7 @@ export default function Enrollments() {
     };
 
     // Unenroll user from course
-    const unenrollFromCourse = async () => {
+    const unenrollFromCourse = async (userId: string) => {
         await enrollmentsClient.unenrollFromCourse(cid, userId);
         dispatch(unenroll({ courseId: cid, userId }));
     };
@@ -45,7 +46,9 @@ export default function Enrollments() {
                 {enrollments.map((enrollment: any) => (
                     <li key={enrollment._id}>
                         User {enrollment.userId}
-                        <button onClick={() => unenrollFromCourse()}>Unenroll</button>
+                        <button onClick={() => unenrollFromCourse(enrollment.userId)}>
+                            Unenroll
+                        </button>
                     </li>
                 ))}
             </ul>
@@ -62,3 +65,4 @@ export default function Enrollments() {
         </div>
     );
 }
+
